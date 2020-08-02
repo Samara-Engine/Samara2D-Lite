@@ -6,7 +6,7 @@ Copyright © 2020 phani srikar. All rights reserved.
 
     CHANGELOG :
     - 1-8-2020
-    * Project Initialised 
+    * Project Initialised
 
     Header Files Hierarchy :
 
