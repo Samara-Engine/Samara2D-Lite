@@ -3,8 +3,10 @@
 #include <stdio.h>
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS){
+        printf("%s\n", "Escape pressed");
         glfwSetWindowShouldClose(window, GLFW_TRUE);
+    }
 }
 static void window_close_callback(GLFWwindow* window){
     printf("%s\n", "Closing Window");
@@ -28,7 +30,7 @@ int main(void)
 
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
-
+    /* Event callback functions */
     glfwSetKeyCallback(window, key_callback);
     glfwSetWindowCloseCallback(window, window_close_callback);
 
