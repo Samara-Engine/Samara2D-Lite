@@ -1,15 +1,16 @@
 #define GL_SILENCE_DEPRECATION
 #include <GLFW/glfw3.h>
-#include <stdio.h>
+#include <iostream>
+
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS){
-        printf("%s\n", "Escape pressed");
+        std::cout << "Escape Key Pressed" << '\n';
         glfwSetWindowShouldClose(window, GLFW_TRUE);
     }
 }
 static void window_close_callback(GLFWwindow* window){
-    printf("%s\n", "Closing Window");
+    std::cout << "Closing Window" << '\n';
 }
 
 int main(void)
@@ -24,6 +25,7 @@ int main(void)
     window = glfwCreateWindow(800, 600, "Hello World", NULL, NULL);
     if (!window)
     {
+        std::cerr << "Could not Create GLFW Window Instance" << '\n';
         glfwTerminate();
         return -1;
     }
